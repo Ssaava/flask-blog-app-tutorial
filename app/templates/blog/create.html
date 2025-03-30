@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="d-flex justify-content-between align-items-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">{% block title %}Blog Posts{% endblock %}</h1>
+    {% if g.user %}
+    <a href="{{ url_for('blog.create') }}" class="btn btn-primary btn-lg">
+        <i class="bi bi-plus-circle"></i> New Post
+    </a>
+    {% endif %}
+</div>
+{% endblock %}
